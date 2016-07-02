@@ -129,14 +129,7 @@ class Config implements ConfigInterface
     public function getEnvironments()
     {
         if (isset($this->values) && isset($this->values['environments'])) {
-            $environments = array();
-            foreach ($this->values['environments'] as $key => $value) {
-                if (is_array($value)) {
-                    $environments[$key] = $value;
-                }
-            }
-
-            return $environments;
+            return $this->values['environments'];
         }
 
         return null;
