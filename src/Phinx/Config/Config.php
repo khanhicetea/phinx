@@ -143,12 +143,12 @@ class Config implements ConfigInterface
         $environments = $this->getEnvironments();
 
         if (isset($environments[$name])) {
+            $environment = $environments[$name];
             if (isset($this->values['environments']['default_migration_table'])) {
-                $environments[$name]['default_migration_table'] =
-                    $this->values['environments']['default_migration_table'];
+                $environment['default_migration_table'] = $this->values['environments']['default_migration_table'];
             }
 
-            return $environments[$name];
+            return $environment;
         }
 
         return null;
